@@ -9,3 +9,76 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+.app-topbar {
+    background: #ffffff;
+    border-bottom: 1px solid var(--dj-border, #e5e7eb);
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+.app-topbar .navbar {
+    min-height: 76px;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--dj-text, #111827);
+    text-decoration: none;
+}
+
+.navbar-brand:hover {
+    color: var(--dj-text, #111827);
+}
+
+.navbar-nav .nav-link {
+    font-weight: 600;
+    color: var(--dj-text-muted, #64748b);
+    border-radius: 999px;
+    padding: 0.65rem 1rem;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    background: var(--dj-primary-light, #e7f3f3);
+    color: var(--dj-primary, #5fa5a7);
+}
+
+.user-menu-btn {
+    border: 0;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--dj-text, #111827);
+    padding: 0.5rem 0.75rem;
+    border-radius: 999px;
+}
+
+.user-menu-btn:hover {
+    background: var(--dj-primary-light, #e7f3f3);
+}
+
+@media (max-width: 767.98px) {
+    .app-topbar .navbar-collapse {
+        padding: 1rem 0;
+    }
+
+    .navbar-nav {
+        gap: 0.25rem !important;
+    }
+
+    .navbar-nav .nav-link {
+        border-radius: 12px;
+    }
+
+    .navbar-user-area {
+        width: 100%;
+    }
+
+    .user-menu-btn {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
