@@ -13,6 +13,7 @@ class ProfilePictureService
         if ($file) {
             $this->delete($user);
             $user->profile_picture = $file->store('avatars', 'public');
+            $user->save();
 
             return;
         }
@@ -20,6 +21,7 @@ class ProfilePictureService
         if ($remove) {
             $this->delete($user);
             $user->profile_picture = null;
+            $user->save();
         }
     }
 

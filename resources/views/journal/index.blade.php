@@ -48,7 +48,7 @@
                     <h3 class="entry-title">
                         <a href="{{ route('journal.show', $entry) }}" class="text-decoration-none text-dark">{{ $entry->title }}</a>
                     </h3>
-                    <p class="entry-excerpt">{{ $entry->content }}</p>
+                    <p class="entry-excerpt">{{ Str::limit($entry->content, 120) }}</p>
                     <div class="d-flex flex-wrap gap-2 mt-3">
                         <a href="{{ route('journal.show', $entry) }}" class="btn-dj-outline btn-sm py-1 px-3">Read</a>
                         <a href="{{ route('journal.edit', $entry) }}" class="btn btn-sm btn-light rounded-pill px-3">Edit</a>

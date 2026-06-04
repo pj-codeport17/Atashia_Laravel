@@ -12,7 +12,15 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->redirectGuestsTo('/login');
-        $middleware->redirectUsersTo('/dashboard');
+        $middleware->redirectUsersTo(function () {
+            return auth()->user()?->is_admin
+                ? route('admin.dashboard')
+                : route('dashboard');
+        });
+        $middleware->alias([
+            'admin'    => \App\Http\Middleware\AdminMiddleware::class,
+            'no_admin' => \App\Http\Middleware\NoAdminMiddleware::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

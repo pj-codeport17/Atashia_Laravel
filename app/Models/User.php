@@ -18,6 +18,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_admin',
         'profile_picture',
         'phone',
         'gender',
@@ -40,6 +41,7 @@ class User extends Authenticatable
             'password' => 'hashed',
             'date_of_birth' => 'date',
             'gender' => Gender::class,
+            'is_admin' => 'boolean',
         ];
     }
 
